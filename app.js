@@ -5,4 +5,9 @@ beatTracker.config(function($stateProvider){
 		url:"",
 		templateUrl: "partials/home.html"
 	});
-}) 
+	$stateProvider.state('beats', {
+		url:"/beats/:beatId",
+		templateUrl: "partials/beats.html",
+		controller: "ReporterCtrl"
+	});
+}); 

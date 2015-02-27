@@ -5,7 +5,7 @@
 		<h3>Your beats!</h3>
 		<ul>
 			<li ng-repeat="item in beats">
-				<a href="beat({beatId.id)}"> {{item.name}} </a>
+				<a ui-sref="beats({beatId: item.id})"> {{item.name}} </a>
 			</li>
 		</ul>
 	</div>
