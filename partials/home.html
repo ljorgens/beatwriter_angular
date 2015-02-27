@@ -3,9 +3,14 @@
 
 	<div ng-controller="BeatCtrl">
 		<div class= "row" ng-show="beats.length">
-			<h3>Your beats!</h3>
+			<h2>Search Your Beats!</h2>
+			<form class="form-inline" role="form">
+				<input type="text" ng-model="query.name" placeholder="Search by Name!">
+			</form>
+			<h2 ng-show="beats.length && filtered.length">Your Beats!</h2>
+            <h2 ng-show="beats.length && !filtered.length">No Matches</h2>
 			<ul>
-				<li ng-repeat="item in beats">
+				<li ng-repeat="item in filtered = (beats | filter:query)">
 					<a ui-sref="home.beats({beatId: item.id})"> {{item.name}} </a>
 				</li>
 			</ul>
