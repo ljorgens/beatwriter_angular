@@ -1,0 +1,19 @@
+<h1>What Beats does your Newspaper have?</h1>
+
+<div ng-controller="BeatCtrl">
+	<div class= "row" ng-show="beats.length">
+		<h3>Your beats!</h3>
+		<ul>
+			<li ng-repeat="item in beats">
+				<a href="beat({beatId.id)}"> {{item.name}} </a>
+			</li>
+		</ul>
+	</div>
+	<div class= "row">
+		<h3>Add a new beat!</h3>
+		<form ng-submit="BeatFactory.addBeat()" role="form">
+			<input type="text" ng-model="BeatFactory.beatName" placeholder="Enter a new beat!">
+			<button type="submit">Add your beat!</button>
+		</form>
+	</div>
+</div>
