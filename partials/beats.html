@@ -1,21 +1,25 @@
-<h1>{{beat.name}}</h1>
+<div class="col-sm-4"></div>
+	<h1>{{beat.name}}</h1>
 
-<div class="row" ng-show="beat.reporters.length">
-	<h3>Reporters Working This Beat!</h3>
-	<ul>
-		<li ng-repeat="item in beat.reporters">
-			{{item.name}}
-		</li>
-	</ul>
-</div>
-<div class="row">
-	<h3>Assign a Reporter to this Beat!</h3>
-	<form ng-submit="assignReporter()" role="form">
-		<input type="text" ng-model="reporterName" placeholder="Reporters Name!" required>
-		<input type="text" ng-model="addBirthday" placeholder="Birthday">
-		<input type="number" ng-model="addEmployment" placeholder="Years Employed">
-		<button type="submit">Assign Reporter!</button>
-	</form>
-</div>
+	<div class="row" ng-show="beat.reporters.length">
+		<h3>Reporters Working This Beat!</h3>
+		<ul>
+			<li ng-repeat="item in beat.reporters">
+				<span ng-click="details = true">{{item.name}}</span><span ng-show="details" class="details = false">
+					{{item.birthday}} {{item.employment}}
+				</span>
+			</li>
+		</ul>
+	</div>
+	<div class="row">
+		<h3>Assign a Reporter to this Beat!</h3>
+		<form ng-submit="assignReporter()" role="form">
+			<input type="text" ng-model="reporterName" placeholder="Reporters Name!" required>
+			<input type="text" ng-model="addBirthday" placeholder="Birthday">
+			<input type="number" ng-model="addEmployment" placeholder="Years Employed">
+			<button type="submit">Assign Reporter!</button>
+		</form>
+	</div>
 
-<a href="/">Home</a>
+	<a href="/">Refresh Page without deleting everything</a>
+</div>
