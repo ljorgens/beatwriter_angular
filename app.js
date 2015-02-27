@@ -10,10 +10,5 @@ beatTracker.config(function($stateProvider){
 		templateUrl: "partials/beats.html",
 		controller: "ReporterCtrl"
 	}); 
-	// $stateProvider.state('beats.reporters', {
-	// 	url:"",
-	// 	templateUrl: "partials/beats.reporters.html",
-	// 	controller: "ReporterCtrl"
-	// });
 });
 
